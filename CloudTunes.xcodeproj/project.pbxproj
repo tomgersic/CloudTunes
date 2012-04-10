@@ -25,7 +25,6 @@
 		FA3504AA1534945900B4B7B1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA3504A81534945900B4B7B1 /* InfoPlist.strings */; };
 		FA3504AC1534945900B4B7B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3504AB1534945900B4B7B1 /* main.m */; };
 		FA3504AE1534945900B4B7B1 /* CloudTunes-Prefix.pch in Resources */ = {isa = PBXBuildFile; fileRef = FA3504AD1534945900B4B7B1 /* CloudTunes-Prefix.pch */; };
-		FA3504CB1534945900B4B7B1 /* SFTestRunnerPlugin.js in Resources */ = {isa = PBXBuildFile; fileRef = FA3504CA1534945900B4B7B1 /* SFTestRunnerPlugin.js */; };
 		FA3504CD1534945A00B4B7B1 /* SalesforceHybridSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA3504CC1534945A00B4B7B1 /* SalesforceHybridSDK.framework */; };
 		FA3504CF1534945A00B4B7B1 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA3504CE1534945A00B4B7B1 /* libsqlite3.dylib */; };
 		FA3504D31534945A00B4B7B1 /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3504D21534945A00B4B7B1 /* icon-72.png */; };
@@ -42,6 +41,7 @@
 		FA3504ED1534945A00B4B7B1 /* PhoneGap.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA3504EC1534945A00B4B7B1 /* PhoneGap.plist */; };
 		FA3504EF1534945A00B4B7B1 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FA3504EE1534945A00B4B7B1 /* Settings.bundle */; };
 		FA3504F11534945B00B4B7B1 /* PhoneGapResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FA3504F01534945B00B4B7B1 /* PhoneGapResources.bundle */; };
+		FA3504F81534948F00B4B7B1 /* www in Resources */ = {isa = PBXBuildFile; fileRef = FA3504F71534948F00B4B7B1 /* www */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -73,35 +73,10 @@
 		FA35049F1534945900B4B7B1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FA3504A11534945900B4B7B1 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		FA3504A31534945900B4B7B1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		FA3504A71534945900B4B7B1 /* CloudTunes-Info.plist */ = {isa = PBXFileReference; path = "CloudTunes-Info.plist"; sourceTree = "<group>"; };
+		FA3504A71534945900B4B7B1 /* CloudTunes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CloudTunes-Info.plist"; sourceTree = "<group>"; };
 		FA3504A91534945900B4B7B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FA3504AB1534945900B4B7B1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FA3504AD1534945900B4B7B1 /* CloudTunes-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CloudTunes-Prefix.pch"; sourceTree = "<group>"; };
-		FA3504B01534945900B4B7B1 /* bootconfig.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = bootconfig.js; sourceTree = "<group>"; };
-		FA3504B11534945900B4B7B1 /* bootstrap.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = bootstrap.html; sourceTree = "<group>"; };
-		FA3504B21534945900B4B7B1 /* forcetk.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = forcetk.js; sourceTree = "<group>"; };
-		FA3504B31534945900B4B7B1 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		FA3504B41534945900B4B7B1 /* inline.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = inline.js; sourceTree = "<group>"; };
-		FA3504B71534945900B4B7B1 /* ajax-loader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ajax-loader.png"; sourceTree = "<group>"; };
-		FA3504B81534945900B4B7B1 /* icon-search-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-search-black.png"; sourceTree = "<group>"; };
-		FA3504B91534945900B4B7B1 /* icons-18-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons-18-black.png"; sourceTree = "<group>"; };
-		FA3504BA1534945900B4B7B1 /* icons-18-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons-18-white.png"; sourceTree = "<group>"; };
-		FA3504BB1534945900B4B7B1 /* icons-36-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons-36-black.png"; sourceTree = "<group>"; };
-		FA3504BC1534945900B4B7B1 /* icons-36-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons-36-white.png"; sourceTree = "<group>"; };
-		FA3504BD1534945900B4B7B1 /* jquery-1.6.2.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "jquery-1.6.2.js"; sourceTree = "<group>"; };
-		FA3504BE1534945900B4B7B1 /* jquery-1.6.2.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "jquery-1.6.2.min.js"; sourceTree = "<group>"; };
-		FA3504BF1534945900B4B7B1 /* jquery.mobile-1.0b2.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = "jquery.mobile-1.0b2.css"; sourceTree = "<group>"; };
-		FA3504C01534945900B4B7B1 /* jquery.mobile-1.0b2.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "jquery.mobile-1.0b2.js"; sourceTree = "<group>"; };
-		FA3504C11534945900B4B7B1 /* jquery.mobile-1.0b2.min.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = "jquery.mobile-1.0b2.min.css"; sourceTree = "<group>"; };
-		FA3504C21534945900B4B7B1 /* jquery.mobile-1.0b2.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "jquery.mobile-1.0b2.min.js"; sourceTree = "<group>"; };
-		FA3504C31534945900B4B7B1 /* phonegap-1.2.0.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "phonegap-1.2.0.js"; sourceTree = "<group>"; };
-		FA3504C41534945900B4B7B1 /* qunit.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = qunit.css; sourceTree = "<group>"; };
-		FA3504C51534945900B4B7B1 /* qunit.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = qunit.js; sourceTree = "<group>"; };
-		FA3504C61534945900B4B7B1 /* SalesforceOAuthPlugin.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = SalesforceOAuthPlugin.js; sourceTree = "<group>"; };
-		FA3504C71534945900B4B7B1 /* SFHybridApp.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = SFHybridApp.css; sourceTree = "<group>"; };
-		FA3504C81534945900B4B7B1 /* SFHybridApp.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = SFHybridApp.js; sourceTree = "<group>"; };
-		FA3504C91534945900B4B7B1 /* SFSmartStorePlugin.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = SFSmartStorePlugin.js; sourceTree = "<group>"; };
-		FA3504CA1534945900B4B7B1 /* SFTestRunnerPlugin.js */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SFTestRunnerPlugin.js; sourceTree = "<group>"; };
 		FA3504CC1534945A00B4B7B1 /* SalesforceHybridSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SalesforceHybridSDK.framework; sourceTree = "<group>"; };
 		FA3504CE1534945A00B4B7B1 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = /usr/lib/libsqlite3.dylib; sourceTree = DEVELOPER_DIR; };
 		FA3504D21534945A00B4B7B1 /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-72.png"; path = "Resources/icons/icon-72.png"; sourceTree = "<group>"; };
@@ -113,12 +88,13 @@
 		FA3504DF1534945A00B4B7B1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/splash/Default@2x.png"; sourceTree = "<group>"; };
 		FA3504E11534945A00B4B7B1 /* Default~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default~iPad.png"; path = "Resources/splash/Default~iPad.png"; sourceTree = "<group>"; };
 		FA3504E31534945A00B4B7B1 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.md; sourceTree = "<group>"; };
-		FA3504E61534945A00B4B7B1 /* AppDelegate.h */ = {isa = PBXFileReference; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
+		FA3504E61534945A00B4B7B1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		FA3504E71534945A00B4B7B1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
 		FA3504EA1534945A00B4B7B1 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; name = README; path = Plugins/README; sourceTree = "<group>"; };
 		FA3504EC1534945A00B4B7B1 /* PhoneGap.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PhoneGap.plist; sourceTree = "<group>"; };
 		FA3504EE1534945A00B4B7B1 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		FA3504F01534945B00B4B7B1 /* PhoneGapResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PhoneGapResources.bundle; sourceTree = "<group>"; };
+		FA3504F71534948F00B4B7B1 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,12 +167,12 @@
 		FA3504A51534945900B4B7B1 /* CloudTunes */ = {
 			isa = PBXGroup;
 			children = (
+				FA3504F71534948F00B4B7B1 /* www */,
 				FA3504CC1534945A00B4B7B1 /* SalesforceHybridSDK.framework */,
 				FA3504CE1534945A00B4B7B1 /* libsqlite3.dylib */,
 				FA3504E31534945A00B4B7B1 /* readme.md */,
 				FA3504EE1534945A00B4B7B1 /* Settings.bundle */,
 				FA3504F01534945B00B4B7B1 /* PhoneGapResources.bundle */,
-				FA3504AF1534945900B4B7B1 /* www */,
 				FA3504D01534945A00B4B7B1 /* Resources */,
 				FA3504E51534945A00B4B7B1 /* Classes */,
 				FA3504E91534945A00B4B7B1 /* Plugins */,
@@ -215,54 +191,6 @@
 				FA3504EC1534945A00B4B7B1 /* PhoneGap.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		FA3504AF1534945900B4B7B1 /* www */ = {
-			isa = PBXGroup;
-			children = (
-				FA3504B01534945900B4B7B1 /* bootconfig.js */,
-				FA3504B11534945900B4B7B1 /* bootstrap.html */,
-				FA3504B21534945900B4B7B1 /* forcetk.js */,
-				FA3504B31534945900B4B7B1 /* index.html */,
-				FA3504B41534945900B4B7B1 /* inline.js */,
-				FA3504B51534945900B4B7B1 /* jquery */,
-				FA3504C31534945900B4B7B1 /* phonegap-1.2.0.js */,
-				FA3504C41534945900B4B7B1 /* qunit.css */,
-				FA3504C51534945900B4B7B1 /* qunit.js */,
-				FA3504C61534945900B4B7B1 /* SalesforceOAuthPlugin.js */,
-				FA3504C71534945900B4B7B1 /* SFHybridApp.css */,
-				FA3504C81534945900B4B7B1 /* SFHybridApp.js */,
-				FA3504C91534945900B4B7B1 /* SFSmartStorePlugin.js */,
-				FA3504CA1534945900B4B7B1 /* SFTestRunnerPlugin.js */,
-			);
-			path = www;
-			sourceTree = "<group>";
-		};
-		FA3504B51534945900B4B7B1 /* jquery */ = {
-			isa = PBXGroup;
-			children = (
-				FA3504B61534945900B4B7B1 /* images */,
-				FA3504BD1534945900B4B7B1 /* jquery-1.6.2.js */,
-				FA3504BE1534945900B4B7B1 /* jquery-1.6.2.min.js */,
-				FA3504BF1534945900B4B7B1 /* jquery.mobile-1.0b2.css */,
-				FA3504C01534945900B4B7B1 /* jquery.mobile-1.0b2.js */,
-				FA3504C11534945900B4B7B1 /* jquery.mobile-1.0b2.min.css */,
-				FA3504C21534945900B4B7B1 /* jquery.mobile-1.0b2.min.js */,
-			);
-			path = jquery;
-			sourceTree = "<group>";
-		};
-		FA3504B61534945900B4B7B1 /* images */ = {
-			isa = PBXGroup;
-			children = (
-				FA3504B71534945900B4B7B1 /* ajax-loader.png */,
-				FA3504B81534945900B4B7B1 /* icon-search-black.png */,
-				FA3504B91534945900B4B7B1 /* icons-18-black.png */,
-				FA3504BA1534945900B4B7B1 /* icons-18-white.png */,
-				FA3504BB1534945900B4B7B1 /* icons-36-black.png */,
-				FA3504BC1534945900B4B7B1 /* icons-36-white.png */,
-			);
-			path = images;
 			sourceTree = "<group>";
 		};
 		FA3504D01534945A00B4B7B1 /* Resources */ = {
@@ -367,7 +295,6 @@
 			files = (
 				FA3504AA1534945900B4B7B1 /* InfoPlist.strings in Resources */,
 				FA3504AE1534945900B4B7B1 /* CloudTunes-Prefix.pch in Resources */,
-				FA3504CB1534945900B4B7B1 /* SFTestRunnerPlugin.js in Resources */,
 				FA3504D31534945A00B4B7B1 /* icon-72.png in Resources */,
 				FA3504D51534945A00B4B7B1 /* icon.png in Resources */,
 				FA3504D71534945A00B4B7B1 /* icon@2x.png in Resources */,
@@ -381,6 +308,7 @@
 				FA3504ED1534945A00B4B7B1 /* PhoneGap.plist in Resources */,
 				FA3504EF1534945A00B4B7B1 /* Settings.bundle in Resources */,
 				FA3504F11534945B00B4B7B1 /* PhoneGapResources.bundle in Resources */,
+				FA3504F81534948F00B4B7B1 /* www in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
