@@ -152,7 +152,9 @@ function onSuccessQuerySoup(cursor) {
     }
     
     navigator.smartstore.closeCursor(cursor);
-    
+    console.log("***ENTRIES***");
+    console.log(entries);
+    console.log(entries.length);
     return entries;
 }
 
