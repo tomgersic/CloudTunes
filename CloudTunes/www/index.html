@@ -3,17 +3,29 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        
+    <script type="text/javascript" charset="utf-8">
+        window.onerror = function(errorMsg,url,lineNumber) {
+        alert("[ERROR] "+errorMsg+" | "+url+" | "+lineNumber);
+        console.log("[ERROR] "+errorMsg+" | "+url+" | "+lineNumber);
+    }
+    </script>
+
 
     <!-- include jquery mobile -->
     <link rel="stylesheet" href="jquery/jquery.mobile-1.0.1.min.css" />
     <script src="jquery/jquery-1.6.4.min.js"></script>
     <script src="jquery/jquery.mobile-1.0.1.min.js"></script>
-        
-    <!-- cloudtunes -->
-    <script src="cloudtunes_offline.js"></script>
     
-    <!-- include phonegap / callback -->
-	<script type="text/javascript" charset="utf-8" src="phonegap-1.2.0.js"></script>
+    <!-- include phonegap / callback / cordova -->
+    <script type="text/javascript" charset="utf-8" src="phonegap-1.2.0.js"></script>
+
+    <!--SmartStore-->
+    <script type="text/javascript" charset="utf-8" src="SFSmartStorePlugin.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cloudtunes_smartstore.js"></script>
+
+    <!--cloudtunes-->
+    <script src="cloudtunes_offline.js"></script>
     
     <!-- required for oauth plugin support -->    
     <script type="text/javascript" src="SalesforceOAuthPlugin.js"></script>
@@ -25,52 +37,30 @@
     <link rel="stylesheet" type="text/css" href="SFHybridApp.css" />
     <script type="text/javascript" charset="utf-8" src="SFHybridApp.js"></script>
 
-    <!--SmartStore-->
-    <script type="text/javascript" charset="utf-8" src="SFSmartStorePlugin.js">
-    <script type="text/javascript" charset="utf-8" src="cloudtunes_smartstore.js">
-        
 
-    <script type="text/javascript" charset="utf-8" src="CloudTunesController.js">
+
+    <script type="text/javascript" charset="utf-8" src="CloudTunesController.js"></script>
+    
+
 
     <script type="text/javascript" charset="utf-8">
-
-    
     // The version of the REST API you wish to use in your app.
-    var apiVersion = "v23.0";
-
-	// If you want to prevent dragging, uncomment this section
-	/*
-	function preventBehavior(e) 
-	{ 
-      e.preventDefault(); 
-    };
-	document.addEventListener("touchmove", preventBehavior, false);
-	*/
-	
-	/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
-	see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
-	for more details -jm */
-	/*
-	function handleOpenURL(url)
-	{
-		// do something with the url passed in.
-	}
-	*/
-	
+    var apiVersion = "v23.0";   
     var forcetkClient;
     var debugMode = true;
 
+
+
     jQuery(document).ready(function() {
-        //Add event listeners and so forth here
-        SFHybridApp.logToConsole("onLoad: jquery ready");
-		document.addEventListener("deviceready", onDeviceReady,false);
+      //Add event listeners and so forth here
+      document.addEventListener("deviceready", onDeviceReady,false);
 
     });
 
     // When this function is called, PhoneGap has been initialized and is ready to roll 
     function onDeviceReady() {
         SFHybridApp.logToConsole("onDeviceReady: PhoneGap ready");
-		//Call getAuthCredentials to get the initial session credentials
+		    //Call getAuthCredentials to get the initial session credentials
         SalesforceOAuthPlugin.getAuthCredentials(salesforceSessionRefreshed, getAuthCredentialsError);
 
         //register to receive notifications when autoRefreshOnForeground refreshes the sfdc session
@@ -78,6 +68,12 @@
 
         //enable buttons
         regLinkClickHandlers();
+
+        console.log('Device is online: '+SFHybridApp.deviceIsOnline());
+
+        if(!SFHybridApp.deviceIsOnline()) {
+          init();
+        }
     }
         
 
@@ -88,6 +84,8 @@
         forcetkClient.setSessionToken(creds.accessToken, apiVersion, creds.instanceUrl);
         forcetkClient.setRefreshToken(creds.refreshToken);
         forcetkClient.setUserAgentString(creds.userAgent);
+
+        init();
     }
 
 

@@ -97,6 +97,8 @@
          */
         function loginSuccess(oauthCredentials) {
             SFHybridApp.logToConsole("loginSuccess");
+            SFHybridApp.logToConsole("access token: "+oauthCredentials.accessToken);
+            SFHybridApp.logToConsole("refresh token: "+oauthCredentials.refreshToken);
             var fullAppUrl;
             if (startData instanceof SFHybridApp.LocalAppStartData) {
                 fullAppUrl =  SFHybridApp.buildLocalUrl(startData.appStartUrl);

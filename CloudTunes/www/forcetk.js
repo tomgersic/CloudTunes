@@ -154,6 +154,7 @@ if (forcetk.Client === undefined) {
      * @param [payload=null] payload for POST/PATCH etc
      */
     forcetk.Client.prototype.ajax = function(path, callback, error, method, payload, retry) {
+        console.log('forcetk ajax path: '+path)
         var that = this;
         var url = this.instanceUrl + '/services/data' + path;
 

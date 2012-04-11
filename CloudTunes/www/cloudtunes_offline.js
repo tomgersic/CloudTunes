@@ -3,12 +3,14 @@ var currentAlbums = new Array();
 
 var $j = jQuery.noConflict(); 
 
-$j(function() { 
+/*$j(function() { 
+    console.log('Adding deviceready event listener');
 	// Check if we are executing within container vs web browser and then set the event accordingly.
-	if (getUrlParamByName('context') == 'container') document.addEventListener("deviceready", init,false);
-	else if (getUrlParamByName('context') == 'contaner') document.addEventListener("deviceready", init,false);
-	else $j(document).ready(init);
-});
+	document.addEventListener("deviceready", init,false);
+
+    console.log('Using API Version: '+apiVersion);
+        
+});*/
 
 function checkCacheAndPrepareSession() {
     if (SFHybridApp.deviceIsOnline() && window.applicationCache) {
@@ -29,8 +31,10 @@ function checkCacheAndPrepareSession() {
 }
 
 function init() {
+    console.log('---cloudtunes_offline.init');
+
     $j.mobile.showPageLoadingMsg();
-    
+
 	checkCacheAndPrepareSession();
 	resetOfflineStore();
 	
@@ -44,14 +48,14 @@ function init() {
 }
 
 function getAlbums(callback) {
+    console.log("get albums");
     $j('#albumlist').empty();
     if (SFHybridApp.deviceIsOnline()) {
-        CloudtunesController.queryAlbums(function(records, e) { 
+        cloudtunesController.queryAlbums(function(records, e) { 
             showAlbums(records, callback); 
 			addOfflineAlbums(records);
         }, {escape:true}); 
     } else {
-      
         console.log("We are offline. Fetching from the smartstore.");
         var onQuerySuccess = function(records) {
             showAlbums(records, callback);
@@ -61,9 +65,18 @@ function getAlbums(callback) {
     }
 }
 
-function showAlbums(records, callback) {
+function showAlbums(response, callback) {
+    console.log("showing albums");
+
+    console.log("response size: "+response.totalSize);
+
+    var records = response.records;
+    
     currentAlbums.length = 0;
+   
     for(var i = 0; i < records.length; i++) { currentAlbums[records[i].Id] = records[i]; }
+
+    console.log("albums records length: "+currentAlbums.length)
 
     $j.each(records,
         function() {
@@ -98,7 +111,7 @@ function showAlbums(records, callback) {
 function getTracks(albumid, callback) {
     $j('#tracklist').empty();
     if (SFHybridApp.deviceIsOnline()) {
-        CloudtunesController.queryTracks(albumid,
+        cloudtunesController.queryTracks(albumid,
             function(records, e) { 
                 showTracks(records,callback);
               addOfflineTracks(records);
@@ -116,7 +129,8 @@ function getTracks(albumid, callback) {
     return true;
 }
 
-function showTracks(records, callback) {
+function showTracks(response, callback) {
+    var records = response.records;
     currentTracks.length = 0;
     for(var i = 0; i < records.length; i++) { currentTracks[records[i].Id] = records[i]; }
 

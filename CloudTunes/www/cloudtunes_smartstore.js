@@ -5,6 +5,7 @@ var ALBUMS_SOUP_NAME = "ct__albumsSoup";
 var TRACKS_SOUP_NAME = "ct__tracksSoup";
 
 function getUrlParamByName(name) {
+  console.log("getUrlParamByName()");
   name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
   var regexS = "[\\?&]" + name + "=([^&#]*)";
   var regex = new RegExp(regexS);
@@ -16,6 +17,7 @@ function getUrlParamByName(name) {
 }
 
 function hasSmartstore() {
+    console.log("hasSmartstore()");
     if (PhoneGap.hasResource("smartstore") && navigator.smartstore) {
         console.log("SmartStore plugin found and loaded");
         return true;
@@ -24,13 +26,14 @@ function hasSmartstore() {
 }
 
 function resetOfflineStore() {
+    console.log("resetOfflineStore()");
     if (SFHybridApp.deviceIsOnline()) {
         clearOfflineSoups(regOfflineSoups);
     }
 }
 
 function regOfflineSoups() {
-      
+    console.log("regOfflineSoups()");      
     if (hasSmartstore()) {
     
         console.log("Registering soups");
@@ -60,7 +63,7 @@ function regOfflineSoups() {
 }
 
 function clearOfflineSoups(cb) {
-      
+    console.log("clearOfflineSoups");
     if (hasSmartstore()) {
     
       var cbCount = 0;
@@ -74,6 +77,7 @@ function clearOfflineSoups(cb) {
 }
 
 function addOfflineAlbums(entries, success, error) {
+    console.log("addOfflineAlbums()");
     if (hasSmartstore())
         navigator.smartstore.upsertSoupEntries(ALBUMS_SOUP_NAME,entries,
                                            success,
@@ -83,6 +87,7 @@ function addOfflineAlbums(entries, success, error) {
 
 
 function addOfflineTracks(entries, success, error) {
+    console.log("addOfflineTracks()");
     if (hasSmartstore())
         navigator.smartstore.upsertSoupEntries(TRACKS_SOUP_NAME,entries,
                                            success,
@@ -90,6 +95,7 @@ function addOfflineTracks(entries, success, error) {
 }
 
 function fetchOfflineAlbums(success, error) {
+    console.log("fetchOfflineAlbums()");
     if (hasSmartstore()) {
         var querySpec = navigator.smartstore.buildAllQuerySpec("Name", null, 20);
         
@@ -100,6 +106,7 @@ function fetchOfflineAlbums(success, error) {
 }
 
 function fetchOfflineTracks(albumId, success, error) {
+    console.log("fetchOfflineTracks()");
     if (hasSmartstore()) {
         var querySpec = navigator.smartstore.buildExactQuerySpec("Album__c", albumId, 20);
         
@@ -128,6 +135,7 @@ function onErrorRegSoup(param) {
 }
 
 function onSuccessQuerySoup(cursor) {
+    console.log("onSuccessQuerySoup()");
     var entries = [];
         
     function addEntriesFromCursor() {
