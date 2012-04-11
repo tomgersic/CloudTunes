@@ -51,9 +51,9 @@ function getAlbums(callback) {
     console.log("get albums");
     $j('#albumlist').empty();
     if (SFHybridApp.deviceIsOnline()) {
-        cloudtunesController.queryAlbums(function(records, e) { 
-            showAlbums(records, callback); 
-			addOfflineAlbums(records);
+        cloudtunesController.queryAlbums(function(response, e) { 
+            showAlbums(response.records, callback); 
+			addOfflineAlbums(response.records);
         }, {escape:true}); 
     } else {
         console.log("We are offline. Fetching from the smartstore.");
@@ -65,13 +65,9 @@ function getAlbums(callback) {
     }
 }
 
-function showAlbums(response, callback) {
+function showAlbums(records, callback) {
     console.log("showing albums");
 
-    console.log("response size: "+response.totalSize);
-
-    var records = response.records;
-    
     currentAlbums.length = 0;
    
     for(var i = 0; i < records.length; i++) { currentAlbums[records[i].Id] = records[i]; }
@@ -112,9 +108,9 @@ function getTracks(albumid, callback) {
     $j('#tracklist').empty();
     if (SFHybridApp.deviceIsOnline()) {
         cloudtunesController.queryTracks(albumid,
-            function(records, e) { 
-                showTracks(records,callback);
-              addOfflineTracks(records);
+            function(response, e) { 
+                showTracks(response.records,callback);
+              addOfflineTracks(response.records);
             }, {escape:true} );
     } else {
 
@@ -129,8 +125,7 @@ function getTracks(albumid, callback) {
     return true;
 }
 
-function showTracks(response, callback) {
-    var records = response.records;
+function showTracks(records, callback) {
     currentTracks.length = 0;
     for(var i = 0; i < records.length; i++) { currentTracks[records[i].Id] = records[i]; }
 
