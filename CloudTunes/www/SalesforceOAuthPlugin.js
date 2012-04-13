@@ -17,6 +17,7 @@ var SalesforceOAuthPlugin = {
 	* 	userAgent
 	*/
     getAuthCredentials: function(success, fail) {
+        console.log('---SalesforceOAuthPlugin.getAuthCredentials');
         PhoneGap.exec(success, fail, "com.salesforce.oauth","getAuthCredentials",[]);
     },
     
@@ -37,6 +38,7 @@ var SalesforceOAuthPlugin = {
      *   userAgent
      */
     authenticate: function(success, fail, oauthProperties) {
+        console.log('---SalesforceOAuthPlugin.authenticate');
         PhoneGap.exec(success, fail, "com.salesforce.oauth", "authenticate", [JSON.stringify(oauthProperties)]);
     },
 
@@ -49,6 +51,7 @@ var SalesforceOAuthPlugin = {
      * will be logged out and asked to re-authenticate.
      */
     logout: function() {
+        console.log('---SalesforceOAuthPlugin.logout');
         PhoneGap.exec(null, null, "com.salesforce.oauth", "logoutCurrentUser", []);
     },
     
@@ -60,6 +63,7 @@ var SalesforceOAuthPlugin = {
      * initialized.
      */
     getAppHomeUrl: function(success) {
+        console.log('---SalesforceOAuthPlugin.getAppHomeUrl');
         PhoneGap.exec(success, null, "com.salesforce.oauth", "getAppHomeUrl", []);
     }
 };

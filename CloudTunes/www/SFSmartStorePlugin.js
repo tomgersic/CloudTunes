@@ -24,8 +24,6 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-
-
 if (!PhoneGap.hasResource("smartstore")) {
 
 PhoneGap.addResource("smartstore");

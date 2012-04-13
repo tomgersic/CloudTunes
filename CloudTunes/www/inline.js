@@ -95,5 +95,5 @@ function onSuccessSfdcAccounts(response) {
 
 function onErrorSfdc(error) {
     SFHybridApp.logToConsole("onErrorSfdc: " + JSON.stringify(error));
-    alert('Error getting sfdc contacts!');
+    alert('SFDC ERROR! '+ JSON.stringify(error));
 }

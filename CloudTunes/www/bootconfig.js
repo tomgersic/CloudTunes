@@ -23,8 +23,8 @@ var oauthScopes = ["visualforce","api"];
 // PhoneGap-based application, and SFHybridApp.RemoteAppStartData for a Visualforce-based
 // application.  The default representations are below, or you can look at the data
 // classes in SFHybridApp.js to see how you can further customize your options.
-//var startData = new SFHybridApp.LocalAppStartData();  // Used for local REST-based "index.html" PhoneGap apps.
-var startData = new SFHybridApp.RemoteAppStartData("/apex/cloudtunes?context=container"); // Used for Visualforce-based apps.
+var startData = new SFHybridApp.LocalAppStartData();  // Used for local REST-based "index.html" PhoneGap apps.
+//var startData = new SFHybridApp.RemoteAppStartData("/apex/cloudtunes?context=container"); // Used for Visualforce-based apps.
 
 // Whether the container app should automatically refresh our oauth session on app foreground:
 // generally a good idea.
